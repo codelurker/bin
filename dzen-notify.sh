@@ -9,7 +9,7 @@ done
 
 [ $duration == "0" ] && duration=
 if [ -z $duration ]; then
-	events="onstart=uncollapse,grabkeys;key_Escape=ungrabkeys,exit;button1=exit"
+	events="onstart=uncollapse,grabkeys;key_Escape=exit;button1=exit"
 else
 	events="onstart=uncollapse;button1=exit"
 fi
