@@ -1,6 +1,6 @@
 #! /bin/sh
 
-touch /tmp/mail-status /tmp/update-status /tmp/weechat-dzenlog /tmp/temp-sensor
+touch /tmp/mail-status /tmp/update-status /tmp/weechat-dzenlog
 
 info1="`cat /tmp/mail-status`"
 info2="`rem|sed '1d'|sed '/^$/d'|wc -l` reminders"

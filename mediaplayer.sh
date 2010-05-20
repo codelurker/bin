@@ -1,13 +1,16 @@
 #! /bin/sh
 
+# Make fifo and start streaming
 fifo="/tmp/mplayer"
-mkfifo $fifo
+[ -e $fifo ] || mkfifo $fifo
 mplayer "$@" <$fifo &
 echo -n "<" > /tmp/mplayer
-tmux rename-window mplayer
-
 mplpid=$!
 
+# Rename tmux window
+tmux rename-window mplayer
+
+# The rest is for accepting output from terminal
 IFS=""
 while [ -e /proc/"$mplpid" ]
 do 
