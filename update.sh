@@ -2,7 +2,7 @@
 
 if [ -z $1 ] 
 then
-	sudo $PACMAN --aur --build-as tzervo -Syu
+	sudo $PACMAN -Syu
 	sudo abs
 	sudo updatedb
 fi
